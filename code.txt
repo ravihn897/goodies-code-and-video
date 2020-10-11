@@ -1,0 +1,52 @@
+package goodies;
+
+import java.util.Scanner;
+
+public class Employee {
+
+	public static void main(String[] args) {
+		
+		Scanner scan=new Scanner(System.in);
+		
+		System.out.println("Number of employees: ");
+		
+		int M=scan.nextInt();
+		
+		String goodies[]=new String[]{"Fitbit Plus","IPods","MI Band","Cult Pass","Macbook Pro"
+				,"Digital Camera","Alexa","Sandwitch Toaster","Microwave Oven","Scale"};
+		
+		int cost[]=new int[]{7980,22349,999,2799,229900,11101,9999,2195,9800,4999};
+		System.out.println("Here the Goodies that are selected for Distribution are: ");
+		
+		int M1[]=new int[M];
+		for(int i=0;i<M;i++){
+			System.out.println(goodies[i%10]+": "+cost[i%10]);
+			M1[i]=cost[i%10];
+		}
+		
+		int great=cost[0];
+		int lowest=cost[0];
+		for(int i=0;i<M;i++){
+			
+			if(M1[i]>great){
+				
+				great=M1[i];
+			}
+			if(M1[i]<lowest){
+				lowest=M1[i];
+			}
+			
+		}
+		System.out.println();
+		
+		System.out.println("highest "+great);
+		
+		System.out.println("lowest "+lowest);
+		
+		System.out.println();
+		
+		System.out.println("Difference between the chosen goodies with highest price and the lowest price is "+(great-lowest));
+		
+	}
+
+}
